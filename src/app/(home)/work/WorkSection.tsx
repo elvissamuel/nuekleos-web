@@ -45,7 +45,7 @@ const WorksSection = () => {
       description: "There are several elements and important personas that make a party, a gathering or an event either fun, exciting or boring. They all play a key role in bringing life to the party.",
       image: "/work/nestle.png",
       overlayColor: "bg-[#50A64F]/40",
-      slug: "/work/golden-morn",
+      slug: "",
     },
 
     {
@@ -54,7 +54,7 @@ const WorksSection = () => {
       description: "Wema Bank drives real business results by embracing a holistic digital strategy spanning infrastructure, product design, marketing, and brand experiences.",
       image: "/work/wema.png",
       overlayColor: "bg-[#E9C416]/25",
-      slug: "/work/golden-morn",
+      slug: "",
     },
 
   ];

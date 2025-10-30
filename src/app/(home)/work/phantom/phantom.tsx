@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Maximize2 } from "lucide-react";
 
 const PhantomContent = () => {
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
+  const [fullscreenVideo, setFullscreenVideo] = useState<string | null>(null);
 
   const sections = [
     {
@@ -22,7 +24,8 @@ const PhantomContent = () => {
       heading: "The Solution",
       content:
         "We created a mini talk-show series of six episodes featuring Tobi Bakre as host, interviewing key influencers from different industries who shared bold, extraordinary stories that reflected the spirit of the Phantom X.",
-      googleDriveUrl: "https://drive.google.com/file/d/1z6ut8rAQ-lzGGk0QUOlaLmG8kZ-Hf1tZ/preview",
+      googleDriveUrl:
+        "https://drive.google.com/file/d/19zQ-kMIKXXKkFCH9-meVyZV7QC1BYANS/preview",
       thumbnail: "/work/phantom/solution-thumbnail.png",
       imagePosition: "right",
       overlayColor: "bg-[#EF6F72]/60",
@@ -33,7 +36,8 @@ const PhantomContent = () => {
       heading: "The Result",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      googleDriveUrl: "https://drive.google.com/file/d/1z6ut8rAQ-lzGGk0QUOlaLmG8kZ-Hf1tZ/preview",
+      googleDriveUrl:
+        "https://drive.google.com/file/d/1NB83M0ab7IdBk8cvL_p9ZFZINKHh8wc_/preview",
       thumbnail: "/work/phantom/result-thumbnail.png",
       imagePosition: "left",
       overlayColor: "bg-[#50A64F]/40",
@@ -41,22 +45,24 @@ const PhantomContent = () => {
     },
   ];
 
-  const openVideo = (videoUrl: string) => setSelectedVideo(videoUrl);
-  const closeVideo = () => setSelectedVideo(null);
+  const handlePlayClick = (id: number) => setPlayingVideo(id);
+  const handleExpandClick = (url: string) => setFullscreenVideo(url);
+  const closeFullscreen = () => setFullscreenVideo(null);
 
   return (
     <div className="w-full bg-white">
+      {/* Main Section */}
       <section className="py-16 px-6 md:px-16">
         <div className="max-w-6xl mx-auto">
-          {/* Title */}
           <h1 className="text-sm md:text-2xl font-semibold text-center mb-12">
             THE PHANTOM XTRAORDINAIRE – Tecno Phantom
           </h1>
 
-          {/* Sections */}
+          {/* Content Sections */}
           <div className="space-y-16">
             {sections.map((section) => {
               const isImageLeft = section.imagePosition === "left";
+              const isPlaying = playingVideo === section.id;
 
               return (
                 <div
@@ -66,7 +72,6 @@ const PhantomContent = () => {
                   {/* Media Section */}
                   <div className={isImageLeft ? "lg:order-1" : "lg:order-2"}>
                     <div className="relative w-full max-w-[450px] mx-auto">
-                      {/* Main Media */}
                       <div className="relative z-10 w-full h-[180px] sm:h-[200px] md:h-[300px]">
                         {section.type === "image" ? (
                           <Image
@@ -75,10 +80,10 @@ const PhantomContent = () => {
                             fill
                             className="object-cover"
                           />
-                        ) : (
+                        ) : !isPlaying ? (
                           <div
                             className="relative w-full h-full cursor-pointer group"
-                            onClick={() => openVideo(section.googleDriveUrl!)}
+                            onClick={() => handlePlayClick(section.id)}
                           >
                             <Image
                               src={section.thumbnail!}
@@ -86,7 +91,6 @@ const PhantomContent = () => {
                               fill
                               className="object-cover"
                             />
-
                             {/* Play Button Overlay */}
                             <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
                               <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -94,10 +98,28 @@ const PhantomContent = () => {
                               </div>
                             </div>
                           </div>
+                        ) : (
+                          <div className="relative w-full h-full">
+                            <iframe
+                              src={section.googleDriveUrl!}
+                              className="w-full h-full"
+                              allow="autoplay"
+                            />
+                            {/* Expand button */}
+                            <button
+                              onClick={() =>
+                                handleExpandClick(section.googleDriveUrl!)
+                              }
+                              className="absolute top-2 right-2 bg-black/70 hover:bg-black text-white p-2 rounded transition-colors z-20"
+                              aria-label="Expand to fullscreen"
+                            >
+                              <Maximize2 size={20} />
+                            </button>
+                          </div>
                         )}
                       </div>
 
-                      {/* Colored overlay offset */}
+                      {/* Colored Overlay */}
                       <div
                         className={`absolute -bottom-4 -right-4 w-full h-full ${section.overlayColor} z-0`}
                       ></div>
@@ -120,22 +142,22 @@ const PhantomContent = () => {
         </div>
       </section>
 
-      {/* Video Modal (Google Drive Embed) */}
-      {selectedVideo && (
+      {/* Fullscreen Modal */}
+      {fullscreenVideo && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-          onClick={closeVideo}
+          onClick={closeFullscreen}
         >
           <div className="relative w-full max-w-5xl aspect-video">
             <button
-              onClick={closeVideo}
+              onClick={closeFullscreen}
               aria-label="Close video"
               className="absolute -top-10 right-0 text-white text-3xl hover:text-gray-300"
             >
               ✕
             </button>
             <iframe
-              src={selectedVideo}
+              src={fullscreenVideo}
               className="w-full h-full"
               allow="autoplay"
               onClick={(e) => e.stopPropagation()}
@@ -151,7 +173,7 @@ const PhantomContent = () => {
         </h2>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Logo */}
+            {/* Logo */}
             <div className="flex justify-center mb-4 md:mb-20 lg:mb-32 lg:justify-start">
               <div className="relative w-full max-w-[300px] h-[100px] md:h-[200px]">
                 <Image
@@ -163,7 +185,7 @@ const PhantomContent = () => {
               </div>
             </div>
 
-            {/* Right Side - Contact Info */}
+            {/* Contact Inputs */}
             <div className="space-y-4">
               <input
                 type="email"
