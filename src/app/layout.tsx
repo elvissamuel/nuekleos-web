@@ -2,16 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import ReactQueryProvider from "./react-query-context";
-import { Sora } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const sora = Sora({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500"]
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   title: "Neukleos",
-  description: "We enable African Markets to thrive at home and on the global stage",
+  description:
+    "We enable African Markets to thrive at home and on the global stage",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -23,19 +26,24 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Neukleos",
-    description: "We enable African Markets to thrive at home and on the global stage",
+    description:
+      "We enable African Markets to thrive at home and on the global stage",
     images: "/logo-icon.png",
   },
 };
 
-export default function RootLayout ({ children }: Readonly<{
+export default function RootLayout({
+  children,
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={sora.className}>
+      <body className={plusJakarta.className}>
         <ReactQueryProvider>
-          {children}
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
           <Toaster />
         </ReactQueryProvider>
       </body>

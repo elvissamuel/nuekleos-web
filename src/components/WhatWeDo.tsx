@@ -1,118 +1,94 @@
 "use client";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+
+import { useState } from "react";
+import { ArrowDownRight } from "lucide-react";
 
 const WhatWeDo = () => {
-  const [showSwipeIcon, setShowSwipeIcon] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowSwipeIcon(entry.isIntersecting);
-      },
-      { threshold: 0.7 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const services = [
     {
-      title: "Business Development",
-      description:
-        "Through entrepreneurship, skill development programs and our startup accelerator projects, we provide hands-on business support that connect and support local creatives and MSMEs.",
-      bg: "bg-black",
-      textColor: "text-white",
-      link: "/work#bussiness-development",
+      id: 1,
+      title: "Business Transformation",
+      bullets: ["Innovation", "Transformation", "Excellence"],
     },
     {
-      title: "Market Access Facilitation",
-      description:
-        "To provide local creatives and businesses with the tools and support needed to access new markets, both locally and internationally.",
-      bg: "bg-orange-600",
-      textColor: "text-white",
-      link: "/work#market-access",
+      id: 2,
+      title: "Digital Media Investment Management",
+      bullets: ["Strategy", "Reach", "Market"],
     },
     {
-      title: "Skill Development",
-      description:
-        "Implementing upskilling programs and standardization initiatives to enhance the capabilities of local creatives and MSMEs.",
-      bg: "bg-amber-500",
-      textColor: "text-white",
-      link: "/work#skills-development",
+      id: 3,
+      title: "Performing Marketing Science",
+      bullets: ["Value", "Results", "Impact"],
     },
     {
-      title: "Strategic Partnerships & Collaborations",
-      description:
-        "Providing strategic guidance and partnership opportunities to enhance operational efficiency for SMEs, to open new markets.",
-      bg: "bg-[#8F9837]",
-      textColor: "text-white",
-      link: "/work#strategic-partnership",
+      id: 4,
+      title: "Digital Production",
+      bullets: ["Attention", "Creativity", "Impact"],
+    },
+    {
+      id: 5,
+      title: "Social",
+      bullets: ["Expertise", "Storytelling", "Integration"],
+    },
+    {
+      id: 6,
+      title: "Technology",
+      bullets: ["Innovation", "Human-Centered", "Impact"],
     },
   ];
 
-  return (
-    <section ref={sectionRef} className="py-16 px-6 md:px-12 lg:px-16 bg-gray-50">
-      {/* Section Title */}
-      <h2 className="text-xl md:text-sm mb-10 uppercase tracking-wide">
-        What We Do
-      </h2>
+  const handleToggle = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
-      {/* Cards Container */}
-      <div className="relative">
-        <div className="overflow-x-auto pb-6 -mx-6 px-6 md:-mx-12 md:px-12 lg:-mx-16 lg:px-16 scrollbar-hide relative">
-          <div className="flex gap-6 min-w-max">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className={`${service.bg} ${service.textColor} p-8 flex flex-col justify-end min-h-[400px] w-[350px] md:w-[300px] lg:w-[350px]`}
-              >
-                <div className="mb-10">
-                  <h3 className="text-xl md:text-xl font-semibold mb-4 leading-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm md:text-sm leading-relaxed opacity-90">
-                    {service.description}
-                  </p>
-                </div>
-                {/* Smooth link */}
-                <Link
-                  href={service.link}
-                  scroll={true}
-                  className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all group"
-                >
-                  Read More
-                  <ArrowUpRight
-                    size={18}
-                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                  />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
+  return (
+    <section className="bg-black text-white py-24 px-6 md:px-16 flex flex-col md:flex-row justify-between gap-12">
+      {/* Left Section */}
+      <div className="md:w-1/2 space-y-6">
+        <p className="text-xl sm:text-xl md:text-xl text-gray-300">What we do</p>
+        <h2 className="text-3xl sm:text-3xl md:text-5xl font-bold">Our Services</h2>
+        <p className="text-gray-400 text-sm sm:text-lg md:text-lg leading-relaxed">
+          Using digital marketing, digital content and technology, we create
+          digital business strategy. We build brands through creative
+          storytelling. We are your one-stop digital shop.
+        </p>
       </div>
 
-      {/* Swipe icon - only shows when section is visible */}
-      {showSwipeIcon && (
-        <div className="md:hidden fixed bottom-20 right-6 z-10">
-          <img
-            src="/swipe-icon.png"
-            alt="Swipe right"
-            className="w-7 h-7 opacity-80"
-          />
-        </div>
-      )}
+      {/* Right Section */}
+      <div className="md:w-1/2 space-y-8">
+        {services.map((service, index) => (
+          <div
+            key={service.id}
+            className="cursor-pointer"
+            onClick={() => handleToggle(index)}
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-sm font-medium">
+                  {String(service.id).padStart(2, "0")}
+                </span>
+                <h3 className="text-sm sm:text-xl md:text-xl font-medium">{service.title}</h3>
+              </div>
+              <ArrowDownRight
+                className={`transition-transform duration-300 ${
+                  activeIndex === index ? "rotate-45" : ""
+                }`}
+              />
+            </div>
+
+            {/* Bullet points */}
+            {activeIndex === index && service.bullets.length > 0 && (
+              <ul className="mt-3 ml-14 space-y-1 text-gray-400 list-disc">
+                {service.bullets.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
