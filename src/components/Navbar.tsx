@@ -47,6 +47,9 @@ export default function Navbar() {
           <Link href="/work" className="hover:text-gray-700 transition">
             Our Work
           </Link>
+          <Link href="/blogs" onClick={() => setOpen(false)}>
+            Blogs
+          </Link>
           <Link href="/contact" className="hover:text-gray-700 transition">
             Contact Us
           </Link>
@@ -71,6 +74,9 @@ export default function Navbar() {
             </Link>
             <Link href="/work" onClick={() => setOpen(false)}>
               Our Work
+            </Link>
+            <Link href="/blogs" onClick={() => setOpen(false)}>
+              Blogs
             </Link>
             <Link href="/contact" onClick={() => setOpen(false)}>
               Contact Us
