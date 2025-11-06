@@ -78,7 +78,7 @@ const WorksSection = () => {
                 <div className={`relative ${isEven ? "lg:order-2" : "lg:order-1"}`}>
                   <div className="relative w-full max-w-[500px] mx-auto">
                     {/* Main Image */}
-                    <div className="relative z-10 w-full h-[180px] sm:h-[200px] md:h-[300px] overflow-hidden">
+                    <div className="relative z-10 w-full h-[250px] sm:h-[200px] md:h-[300px] overflow-hidden">                      
                       <Image
                         src={project.image}
                         alt={project.title}

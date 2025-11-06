@@ -77,7 +77,7 @@ const GoldenMornContent = () => {
                   <div className={isImageLeft ? "lg:order-1" : "lg:order-2"}>
                     <div className="relative w-full max-w-[450px] mx-auto">
                       {/* Video Frame */}
-                      <div className="relative z-10 w-full h-[180px] sm:h-[200px] md:h-[300px]">
+                      <div className="relative z-10 w-full h-[250px] sm:h-[200px] md:h-[300px]">
                         {!isPlaying ? (
                           <div
                             className="relative w-full h-full cursor-pointer group"
