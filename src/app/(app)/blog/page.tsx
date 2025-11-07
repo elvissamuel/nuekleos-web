@@ -5,7 +5,7 @@ import { getPosts } from "@/lib/api-calls";
 import { QUERY_KEY } from "@/lib/rbac";
 import { columns } from "./columns";
 import { BlogPostTable } from "./data-table";
-import NewBlogPostForm from "@/components/NewBlogPostForm";
+// import NewBlogPostForm from "@/components/NewBlogPostForm";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { PlusCircle, ChevronLeft, ChevronRight } from "lucide-react";
@@ -66,7 +66,7 @@ export default function BlogPage () {
             <SheetHeader className="mb-5">
               <SheetTitle className="text-2xl">Create New Blog Post</SheetTitle>
             </SheetHeader>
-            <NewBlogPostForm />
+            {/* <NewBlogPostForm /> */}
           </SheetContent>
         </Sheet>
       </div>
