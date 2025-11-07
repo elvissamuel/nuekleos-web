@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative w-full h-[100vh] flex items-center overflow-hidden">
       {/* Background image */}
       <Image
-        src="/hero-bg.png"
+        src="/Hero-bg.png"
         alt="Neukleos team working"
         fill
         priority
@@ -25,7 +25,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-6 text-sm text-gray-200 leading-relaxed">
-          We shape a brand’s identity, helping businesses stand out and <br />
+          We shape a brand’s identity, helping businesses stand out and 
           connect with their audience.
         </p>
 
