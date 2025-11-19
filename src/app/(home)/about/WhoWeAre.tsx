@@ -10,7 +10,7 @@ const WhoWeAre = () => {
         {/* Top Section */}
         <div className="grid md:grid-cols-2 gap-10 mb-20">
           <div>
-            <h3 className="text-xl md:text-2xl mt-28">Who we are</h3>
+            <h3 className="text-xl md:text-2xl mt-0 md:mt-28">Who we are</h3>
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
