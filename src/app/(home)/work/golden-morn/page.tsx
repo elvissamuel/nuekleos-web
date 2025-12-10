@@ -7,7 +7,6 @@ export default function GoldenMornPage() {
         <Hero 
         backgroundImage="/work/golden-morn/golden-more-bg.png"
         projectTitle="Neukleos x Golden Morn"
-        downloadLink="/case-studies/lacasera.pdf"
         />
         <GoldenMornContent />
     </main>

@@ -7,7 +7,6 @@ export default function PhantomPage() {
         <Hero 
         backgroundImage="/work/phantom/phantom-bg.png"
         projectTitle="Neukleos x TECNO PHANTOM"
-        downloadLink="/case-studies/phantom.pdf"
         />
         <PhantomContent />
     </main>

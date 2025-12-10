@@ -6,14 +6,12 @@ interface HeroProps {
   backgroundImage: string;
   projectTitle: string;
   caseStudyLabel?: string;
-  downloadLink?: string;
 }
 
 const Hero = ({ 
   backgroundImage, 
   projectTitle, 
   caseStudyLabel = "Case Study",
-  downloadLink 
 }: HeroProps) => {
   return (
     <section className="relative w-full h-[300px] md:h-[300px]">
@@ -42,16 +40,7 @@ const Hero = ({
           {projectTitle}
         </h1>
 
-        {/* Download Button */}
-        {downloadLink && (
-          <a
-            href={downloadLink}
-            download
-            className="bg-black text-white px-8 py-3 font-medium text-sm hover:bg-gray-900 transition-colors"
-          >
-            Download Case Study
-          </a>
-        )}
+        
       </div>
     </section>
   );

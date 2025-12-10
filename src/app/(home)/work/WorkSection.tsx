@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +9,8 @@ const WorksSection = () => {
     {
       id: "lacasera",
       title: "LACASERA",
-      description: "The aim of this campaign was to rally Nigerians and free them of the mental shackles post-strike (COVID) and to reawaken and to recover and move forward.",
+      description:
+        "The aim of this campaign was to rally Nigerians and free them of the mental shackles post-strike (COVID) and to reawaken and to recover and move forward.",
       image: "/work/lacasera.png",
       overlayColor: "bg-[#BE595C]/70",
       slug: "/work/lacasera",
@@ -16,7 +18,8 @@ const WorksSection = () => {
     {
       id: "maggi",
       title: "MAGGI",
-      description: "No matter how you slice and dice it, some food combos are just considered disgusting and are likely to earn you judgment and strange looks. So, please who are these kinds of meals of the crazy team doing?",
+      description:
+        "In 2023, amidst Nigeria's most divisive election with deep tribal tensions, we discovered a unifying truth: food. The 'United by Taste' campaign spotlighted how certain dishes and eating habits transcend our differences, showcasing food as the common language all Nigerians speak regardless of origin—a powerful reminder that shared flavors can bridge even the widest divides.",
       image: "/work/maggi.png",
       overlayColor: "bg-[#50A64F]/40",
       slug: "/work/maggi",
@@ -24,49 +27,55 @@ const WorksSection = () => {
     {
       id: "tecno-phantom",
       title: "TECNO PHANTOM X LAUNCH",
-      description: "We produced a six-part talk show with Tee Billz and local influencers, using their stories to showcase the Tecno Phantom X and its standout features.",
+      description:
+        "We developed a content idea that would not only create awareness for the new Tecno Phantom X phone but also showcase its features",
       image: "/work/tecno-phantom.png",
       overlayColor: "bg-[#E9C416]/20",
       slug: "/work/phantom",
     },
-
     {
       id: "golden-morn",
       title: "GOLDEN MORN",
-      description: `There's a popular saying "Eat Breakfast like a King. Lunch like a Prince and Dinner like a Pauper." Further driving it home, we said if Breakfast is King, then Golden Morn is King.`,
+      description:
+        "Building on the saying Eat Breakfast like a King, we positioned Golden Morn as Nigeria's undisputed King of Breakfast. The campaign featured influential 'kings' from various fields celebrating the brand's number one breakfast cereal status, culminating in a breakfast-themed party where fans joined the royal celebration—reinforcing Golden Morn's reign as the ultimate morning choice.",
       image: "/work/golden-morn.png",
       overlayColor: "bg-[#EF6F72]/60",
       slug: "/work/golden-morn",
     },
-
     {
       id: "nestle-pure-life",
       title: "Nestle Pure Life",
-      description: "There are several elements and important personas that make a party, a gathering or an event either fun, exciting or boring. They all play a key role in bringing life to the party.",
+      description:
+        "We sparked fun, controversial debates asking 'Can a party survive without water?' to reposition Nestlé Pure Life from a background necessity to an essential party element. By highlighting how water plays a vital role alongside other key party personas, we launched the brand's first-ever thematic advertising campaign in Nigeria, successfully establishing Nestlé Pure Life as 'The Life of the Party.'",
       image: "/work/nestle.png",
       overlayColor: "bg-[#50A64F]/40",
-      slug: "",
+      slug: "/work/nestle",
     },
-
     {
-      id: "wema",
-      title: "Wema Bank",
-      description: "Wema Bank drives real business results by embracing a holistic digital strategy spanning infrastructure, product design, marketing, and brand experiences.",
-      image: "/work/wema.png",
+      id: "haier",
+      title: "Haier Thermocool",
+      description:
+        "Haier Thermocool needed to address Nigeria's biggest daily worry—power and energy costs—while justifying premium pricing through the Big Brother Naija platform. We launched 'One Less Worry. One More Reason to Feel at Home,' combining TVCs with real family scenarios, a BBN scavenger hunt, and Stan Nze-led influencer storytelling. The fully integrated campaign successfully repositioned inverter appliances from functional machines into emotional family essentials that bring comfort and ease daily stress.",
+      image: "/work/Hpz.jpg",
       overlayColor: "bg-[#E9C416]/25",
-      slug: "",
+      slug: "/work/haier-thermocool",
     },
 
+    // Extra projects
+    
   ];
+
+  const [showMore, setShowMore] = useState(false);
+
+  const visibleProjects = showMore ? projects : projects.slice(0, 6);
 
   return (
     <section className="w-full bg-white py-16 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
-        {/* Projects Grid */}
         <div className="space-y-16">
-          {projects.map((project, index) => {
+          {visibleProjects.map((project, index) => {
             const isEven = index % 2 === 0;
-            
+
             return (
               <div
                 key={project.id}
@@ -74,11 +83,9 @@ const WorksSection = () => {
                   isEven ? "" : "lg:flex-row-reverse"
                 }`}
               >
-                {/* Image Section */}
                 <div className={`relative ${isEven ? "lg:order-2" : "lg:order-1"}`}>
                   <div className="relative w-full max-w-[500px] mx-auto">
-                    {/* Main Image */}
-                    <div className="relative z-10 w-full h-[250px] sm:h-[200px] md:h-[300px] overflow-hidden">                      
+                    <div className="relative z-10 w-full h-[250px] sm:h-[200px] md:h-[300px] overflow-hidden">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -87,18 +94,14 @@ const WorksSection = () => {
                       />
                     </div>
 
-                    {/* Colored overlay offset at bottom right */}
                     <div
                       className={`absolute bottom-[-16px] right-[-16px] w-full h-full ${project.overlayColor} z-0`}
                     ></div>
                   </div>
                 </div>
 
-                {/* Content Section */}
                 <div className={`${isEven ? "lg:order-1" : "lg:order-2"}`}>
-                  <h2 className="text-sm md:text-2xl font-bold mb-4">
-                    {project.title}
-                  </h2>
+                  <h2 className="text-sm md:text-2xl font-bold mb-4">{project.title}</h2>
                   <p className="text-gray-700 text-sm md:text-sm mb-6 leading-relaxed">
                     {project.description}
                   </p>
@@ -114,14 +117,14 @@ const WorksSection = () => {
           })}
         </div>
 
-        {/* Centered View More Button */}
+        {/* View More / View Less */}
         <div className="flex justify-center mt-16">
-          <Link
-            href="/works"
+          <button
+            onClick={() => setShowMore(!showMore)}
             className="border-2 border-black px-8 py-3 font-bold text-lg hover:bg-black hover:text-white transition-colors"
           >
-            View More
-          </Link>
+            {showMore ? "View Less" : "View More"}
+          </button>
         </div>
       </div>
     </section>
