@@ -7,7 +7,6 @@ export default function LacaseraPage() {
         <Hero 
         backgroundImage="/work/lacasera/lacasera-bg.png"
         projectTitle="Neukleos x Lacasera"
-        downloadLink="/case-studies/lacasera.pdf"
         />
         <LacaseraContent />
     </main>

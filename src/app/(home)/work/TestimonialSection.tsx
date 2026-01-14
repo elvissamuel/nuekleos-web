@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
             </div>
             
             {/* Heading */}
-            <h2 className="text-2xl md:text-2xl font-bold leading-tight mb-4">
+            <h2 className="text-2xl md:text-2xl font-bold leading-tight ">
               What our<br />Clients are<br />saying
             </h2>
           </div>

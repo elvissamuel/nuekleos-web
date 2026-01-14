@@ -7,7 +7,6 @@ export default function MaggiPage() {
         <Hero 
         backgroundImage="/work/maggi/maggi-bg.png"
         projectTitle="Neukleos x Maggi"
-        downloadLink="/case-studies/phantom.pdf"
         />
         <MaggiContent />
     </main>
