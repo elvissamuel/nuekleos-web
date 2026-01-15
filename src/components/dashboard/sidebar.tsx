@@ -3,6 +3,7 @@
 import { BaseSyntheticEvent } from "react";
 import { IoLogOutOutline } from "react-icons/io5";
 import { type Link, SidebarItem } from ".";
+import Image from "next/image";
 
 interface SidebarProps {
   title?: string;
@@ -16,10 +17,13 @@ export function Sidebar ({ logout, links, title, hideLogout }: SidebarProps) {
     <div className="flex grow flex-col justify-between bg-white relative px-3 py-4">
       <div className="space-y-3">
         <div className="px-4 pb-4 border-b border-border bg-gray-800 lg:hidden">
-          <img
-            src={"/logo.svg"}
-            alt="Ethnocentrique"
-            className="h-8 w-auto"
+          <Image
+            src="/logo-icon.png" 
+            alt="Nuekleos logo"       
+            width={240}                 
+            height={55}
+            priority
+            className="object-contain w-auto h-10 md:h-12"
           />
         </div>
         <div className="px-4">

@@ -12,6 +12,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import Image from "next/image";
 
 export default function LoginForm () {
   type LoginFormInput = z.infer<typeof loginFormSchema>;
@@ -74,10 +75,13 @@ export default function LoginForm () {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <img
-              src="/logo-black.svg"
-              alt="Ethnocentrique"
-              className="h-6 w-auto"
+            <Image
+              src="/logo-icon.png" 
+              alt="Nuekleos logo"       
+              width={240}                 
+              height={55}
+              priority
+              className="object-contain w-auto h-10 md:h-12"
             />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Login</h1>
@@ -134,7 +138,7 @@ export default function LoginForm () {
             />
             <Button 
               type="submit" 
-              className="w-full h-12 bg-orange-600 hover:bg-orange-700 text-white font-medium rounded-lg transition-colors"
+              className="w-full h-12 bg-[#000000] hover:bg-[#000000] text-white font-medium rounded-lg transition-colors"
               disabled={form.formState.isSubmitting}
             >
               {form.formState.isSubmitting ? "Signing in..." : "Sign In"}

@@ -11,10 +11,12 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { IPagination } from "@/lib/models/models";
+import NewBlogPostForm from "@/components/NewBlogPostForm";
 
 export default function BlogPage () {
   const [currentPage, setCurrentPage] = useState(1);
   const [pagination, setPagination] = useState<IPagination | null>(null);
+  const [sheetOpen, setSheetOpen] = useState(false);
   const pageSize = 10;
 
   const { data: posts, isLoading, error } = useQuery({
@@ -55,7 +57,7 @@ export default function BlogPage () {
           <h1 className="text-3xl font-bold text-gray-900">Blog Posts</h1>
           <p className="text-gray-600 mt-1">Manage your blog content</p>
         </div>
-        <Sheet>
+        <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
           <SheetTrigger asChild>
             <Button className="bg-orange-600 hover:bg-orange-700 text-white">
               <PlusCircle className="mr-2 h-4 w-4" />
@@ -66,7 +68,7 @@ export default function BlogPage () {
             <SheetHeader className="mb-5">
               <SheetTitle className="text-2xl">Create New Blog Post</SheetTitle>
             </SheetHeader>
-            {/* <NewBlogPostForm /> */}
+            <NewBlogPostForm onSuccess={() => setSheetOpen(false)} />
           </SheetContent>
         </Sheet>
       </div>

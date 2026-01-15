@@ -93,3 +93,19 @@ export const updateUserSchema = z.object({
   role: z.enum(["ADMIN", "EDITOR", "USER"]).optional(),
   is_inbuilt: z.boolean().optional(),
 });
+
+export const categorySchema = z.object({
+  name: z.string().min(2, { message: "Category name must be at least 2 characters long" })
+    .max(100, { message: "Category name must be at most 100 characters long" }),
+  slug: z.string().min(2, { message: "Slug must be at least 2 characters long" })
+    .max(200, { message: "Slug must be at most 200 characters long" }),
+});
+
+export const updateCategorySchema = z.object({
+  name: z.string().min(2, { message: "Category name must be at least 2 characters long" })
+    .max(100, { message: "Category name must be at most 100 characters long" })
+    .optional(),
+  slug: z.string().min(2, { message: "Slug must be at least 2 characters long" })
+    .max(200, { message: "Slug must be at most 200 characters long" })
+    .optional(),
+});
