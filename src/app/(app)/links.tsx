@@ -1,6 +1,6 @@
 // NB: Do not add "use client" to this file if you want to build links
 // using server side session data like user roles or permissions
-import { LuLayoutDashboard, LuFileText, LuUsers } from "react-icons/lu";
+import { LuLayoutDashboard, LuFileText, LuUsers, LuFolderTree } from "react-icons/lu";
 
 export const links = [
   {
@@ -12,6 +12,11 @@ export const links = [
     name: "Blog Posts",
     url: "/blog",
     icon: <LuFileText className="size-5 mr-2 text-orange-600" />
+  },
+  {
+    name: "Categories",
+    url: "/categories",
+    icon: <LuFolderTree className="size-5 mr-2 text-orange-600" />
   },
   {
     name: "Users",

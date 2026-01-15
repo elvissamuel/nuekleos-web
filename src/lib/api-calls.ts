@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { IApiError, IApiResponse, IProduct, IValidationError, IPost, IUser, IUserWithCount, IPagination, IPostWithPagination } from "./models/models";
-import { productSchema, updateProductSchema, postSchema, updatePostSchema, userSchema, updateUserSchema } from "./models/validation-schema";
+import { IApiError, IApiResponse, IProduct, IValidationError, IPost, IUser, IUserWithCount, IPagination, IPostWithPagination, ICategory } from "./models/models";
+import { productSchema, updateProductSchema, postSchema, updatePostSchema, userSchema, updateUserSchema, categorySchema, updateCategorySchema } from "./models/validation-schema";
 
 async function handleValidationResponse (response: Response) {
   const issues = await response.json() as IValidationError[];
@@ -72,7 +72,7 @@ export const getPosts = async (page: number = 1, limit: number = 10): Promise<IA
 };
 
 export const getPublishedPosts = async (): Promise<IApiResponse<IPost[]>> => {
-  return handleApiCalls(await fetch(`${process.env.NEXT_PUBLIC_BROWSER_URL}api/posts/published`, { method: "GET", cache: "no-store" }));
+  return handleApiCalls(await fetch(`${process.env.NEXT_PUBLIC_BROWSER_URL}/api/posts/published`, { method: "GET", cache: "no-store" }));
 };
 
 export const getPostBySlug = async (slug: string): Promise<IApiResponse<IPost>> => {
@@ -82,6 +82,7 @@ export const getPostBySlug = async (slug: string): Promise<IApiResponse<IPost>> 
 export const createPost = async (input: z.infer<typeof postSchema>): Promise<IApiResponse<IPost>> => {
   return handleApiCalls(await fetch(process.env.NEXT_PUBLIC_BROWSER_URL + "/api/posts", {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(input),
   }));
 };
@@ -122,6 +123,18 @@ export const deleteUser = async (id: string): Promise<IApiResponse<IUser>> => {
   return handleApiCalls(await fetch(process.env.NEXT_PUBLIC_BROWSER_URL + "/api/users/" + id, {
     method: "DELETE",
     headers: { "contentType": "application/json" },
+  }));
+};
+
+export const getCategories = async (): Promise<IApiResponse<ICategory[]>> => {
+  return handleApiCalls(await fetch(process.env.NEXT_PUBLIC_BROWSER_URL + "/api/categories", { method: "GET" }));
+};
+
+export const createCategory = async (input: z.infer<typeof categorySchema>): Promise<IApiResponse<ICategory>> => {
+  return handleApiCalls(await fetch(process.env.NEXT_PUBLIC_BROWSER_URL + "/api/categories", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
   }));
 };
 

@@ -3,8 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import ReactQueryProvider from "./react-query-context";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ConditionalLayout from "@/components/ConditionalLayout";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -25,10 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={plusJakarta.className}>
         <ReactQueryProvider>
-          
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <ConditionalLayout>{children}</ConditionalLayout>
           <Toaster />
         </ReactQueryProvider>
       </body>

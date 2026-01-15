@@ -104,7 +104,7 @@ export async function POST (req: NextRequest) {
         ...postData,
         authorId: user.id,
         publishedAt: validation.data.published ? new Date() : null,
-        categories: categoryIds ? {
+        categories: categoryIds && categoryIds.length > 0 ? {
           create: categoryIds.map(categoryId => ({
             category: { connect: { id: categoryId } },
           })),
