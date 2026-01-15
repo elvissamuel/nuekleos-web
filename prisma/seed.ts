@@ -11,7 +11,7 @@ const config: ParseArgsConfig = { options: { environment: { type: "string" } } }
 async function seedUsers () {
   const superAdmin =  {
     name: "Super Admin",
-    email: "super.admin@ethnocentrique.com",
+    email: "super.admin@neukleos.com",
     password: "secret",
     role: USER_ROLES.ADMIN,
     is_inbuilt: true

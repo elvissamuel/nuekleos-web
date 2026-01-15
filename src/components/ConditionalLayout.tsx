@@ -17,6 +17,7 @@ export default function ConditionalLayout({
     "/admin",
     "/blog",
     "/users",
+    "/categories",
   ];
 
   // Check if current path starts with any of the hide routes
