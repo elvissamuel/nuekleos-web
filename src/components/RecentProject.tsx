@@ -9,18 +9,18 @@ import Link from "next/link";
 const slides = [
   {
     image: "/work/haier-thermocool/hpz-bg.jpg",
-    text: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex",
+    text: "Built around Nigeria’s energy reality, the #Always There For You campaign positioned Haier Thermocool as the smart choice for energy-efficient appliances through a powerful mix of TV, digital, influencers, and Big Brother Naija sponsorship. ",
     link: "/work/haier-thermocool",
   },
   {
-    image: "/project-bg-2.png",
-    text: "Second project description goes here. Replace this with real data from your designs.",
-    link: "/projects/case-study-2",
+    image: "/work/golden-morn/golden-more-bg.png",
+    text: "Built around World Breakfast Day, the King of Breakfast campaign reinforced Golden Morn’s leadership through influencer activations and a fan‑focused breakfast party. It delivered 11.6M reach, 56.3M impressions, 1.8M views, and won Silver at the Pitchers Awards 2024.",
+    link: "/work/golden-morn",
   },
   {
-    image: "/project-bg-3.png",
-    text: "Third project description goes here. More placeholder text for the slider functionality.",
-    link: "/projects/case-study-3",
+    image: "/work/phantom/phantom-bg.png",
+    text: "The Phantom X talk‑show series featured bold influencers with host Tobi Bakre, creating awareness while showcasing the phone’s standout features.",
+    link: "/work/phantom",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function RecentProjects() {
 
   const current = slides[index];
 
-  // typed Variants — functions receive the `custom` value (our direction)
+  
   const slideVariants: Variants = {
     hidden: (dir: number) => ({
       x: dir === 1 ? 150 : -150,
@@ -189,7 +189,7 @@ export default function RecentProjects() {
           <Image src="/project-1.png" alt="Project 1" fill className="object-cover" />
           <div className="absolute bottom-6 left-6">
             <Link
-              href="/projects/project-1"
+              href="/work/nestle"
               className="bg-gradient-to-r from-gray-800/70 to-gray-900/60 text-yellow-300 px-6 py-3 text-sm font-semibold backdrop-blur-md"
             >
               Read case study →

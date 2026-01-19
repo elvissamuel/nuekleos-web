@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   title: "Neukleos",
   description: "We enable African Markets to thrive at home and on the global stage",
   icons: {
-    icon: "/logo-icon.png",
-    shortcut: "/logo-icon.png",
-    apple: "/logo-icon.png",
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
 };
 

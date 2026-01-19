@@ -26,7 +26,7 @@ const LacaseraContent = () => {
       id: 3,
       heading: "The Result",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "The Independence Day spoken word video reached millions of Nigerians, sparking nationwide conversations around unity, resilience, and progress in a post‑pandemic era. By positioning Lacasera as a patriotic force for recovery and renewal, the campaign successfully deepened emotional connection with audiences and reinforced the brand’s role as a symbol of togetherness and hope.",
       image: "/work/lacasera/result.png",
       imagePosition: "left",
       overlayColor: "bg-[#50A64F]/40",

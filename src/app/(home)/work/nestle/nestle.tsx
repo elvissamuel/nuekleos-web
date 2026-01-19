@@ -13,7 +13,7 @@ const NestleContent = () => {
       id: 1,
       heading: "The Task",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Position our Nestlé Pure Life as a brand that enables well-deserved unwinding moments.",
       image: "/work/nestle/nestle-bg.png",
       imagePosition: "left",
       overlayColor: "bg-[#50A64F]/40",
@@ -23,7 +23,7 @@ const NestleContent = () => {
       id: 2,
       heading: "The Solution",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "The Life of the Party campaign reframed water’s role at social gatherings by sparking playful debates around whether a party could survive without it. This bold cultural insight positioned Nestlé Pure Life as an essential presence at every celebration, marking its first‑ever thematic advertising campaign in Nigeria.",
       googleDriveUrl:
         "https://drive.google.com/file/d/1yIC0KDdq0apvIseaM3wxk_2y5fMgtHz1/preview",
       thumbnail: "/work/nestle/solution-thumbnail.png",
@@ -35,7 +35,7 @@ const NestleContent = () => {
   id: 3,
   heading: "The Result",
   content:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "The campaign reached 5.6 million Nigerians with over 6.9 million impressions, driving 163,222 engagements and 281,843 video views. By sparking conversations and positioning the brand as essential to everyday moments, the campaign deepened consumer connection and reinforced its cultural relevance.",
   googleDriveUrl:
     "https://www.youtube.com/embed/qf_3sNYYnz4",
   thumbnail: "/work/nestle/result-thumbnail.png",
