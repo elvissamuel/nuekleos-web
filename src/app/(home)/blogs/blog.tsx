@@ -116,12 +116,13 @@ export default function BlogPage() {
                   {postExcerpt}
                 </p>
 
-                <Link
-                  href={`/blogs/${post.slug}`}
-                  className="inline-block border-2 border-black px-5 py-2 text-xs font-medium hover:bg-black hover:text-white transition"
-                >
-                  Read More
-                </Link>
+               <Link
+  href={`/blogs/blogpage/${post.slug}`}
+  className="inline-block border-2 border-black px-5 py-2 text-xs font-medium hover:bg-black hover:text-white transition"
+>
+  Read More
+</Link>
+
               </div>
             </div>
           );
