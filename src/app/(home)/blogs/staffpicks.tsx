@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 const staffPicks = [
@@ -54,17 +55,20 @@ export default function StaffPicks() {
             />
           </div>
 
-          <button className="self-start border border-gray-300 text-sm px-3 py-1 rounded hover:bg-gray-100 transition">
+          <Link
+            href="/blogs/blogpage"
+            className="self-start border border-gray-300 text-sm px-3 py-1 rounded hover:bg-gray-100 transition"
+          >
             Read More
-          </button>
+          </Link>
         </div>
 
         {/* Right - Smaller Picks */}
         <div className="flex flex-col gap-4">
           {staffPicks.map((post) => (
-            <a
+            <Link
               key={post.id}
-              href="#"
+              href="/blogs/blogpage"
               className="flex items-center gap-4 border rounded-xl p-4 hover:shadow transition"
             >
               <div className="relative w-24 h-20 flex-shrink-0">
@@ -75,14 +79,16 @@ export default function StaffPicks() {
                   className="object-cover rounded-md"
                 />
               </div>
+
               <div className="flex-1">
                 <h4 className="font-semibold text-sm mb-1">{post.title}</h4>
                 <p className="text-sm text-gray-500 line-clamp-2">
                   {post.description}
                 </p>
               </div>
+
               <ArrowRight className="text-gray-500 flex-shrink-0" size={18} />
-            </a>
+            </Link>
           ))}
         </div>
       </div>

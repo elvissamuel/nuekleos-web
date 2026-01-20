@@ -33,7 +33,7 @@ const GoldenMornContent = () => {
       id: 3,
       heading: "The Result",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "The campaign reached 11.6 million Nigerians with over 56.3 million impressions and generated 1.8 million views/plays, reinforcing Golden Morn’s position as Nigeria’s leading breakfast brand. By partnering with top influencers and celebrating World Breakfast Day with a vibrant breakfast‑themed party, the campaign crowned Golden Morn as the “King of Breakfast” in the hearts of consumers. Its strategic insight and execution were recognized nationally, winning Silver for Insights and Strategy at the Pitchers Awards 2024.",
       googleDriveUrl: "https://drive.google.com/file/d/17XR9cneQsrvFw9NjE43VxrKHf1i6sc_X/preview",
       thumbnail: "/work/golden-morn/result-thumbnail.png",
       imagePosition: "left",

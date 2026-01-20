@@ -1,15 +1,12 @@
 import Navbar from "@/components/Navbar";
-import Hero from "./hero";
-import BlogPage from "./blog";
-import StaffPicks from "./staffpicks";
+import BlogPage from "./blogpage";
 
 export default function Blog() {
   return (
     <main>
       <Navbar />
-      <Hero />
       <BlogPage />
-      <StaffPicks />
+      
     </main>
   );
 }
