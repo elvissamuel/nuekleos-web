@@ -46,7 +46,7 @@ const MaggiContent = () => {
       {/* Title Section */}
       <section className="w-full h-[20vh] bg-white py-8 px-6 md:px-16">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-xl md:text-2xl font-semibold">
+          <h1 className="text-xl md:text-2xl font-semibold mt-3">
             United by taste - Maggi
           </h1>
         </div>

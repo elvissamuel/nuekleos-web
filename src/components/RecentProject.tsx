@@ -127,7 +127,7 @@ export default function RecentProjects() {
       {/* ---------------- DESKTOP VERSION ---------------- */}
       <div className="hidden sm:block">
         <div className="relative w-full h-[550px] overflow-hidden">
-          <AnimatePresence mode="wait" custom={direction}>
+          <AnimatePresence mode="sync" custom={direction}>
             <motion.div
               key={index}
               custom={direction}
