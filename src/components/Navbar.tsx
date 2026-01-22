@@ -14,7 +14,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4 relative">
         {/* Logo */}
         <Link href="/" className="flex items-center flex-shrink-0">
-          <div className="relative w-48 h-12 md:w-56 md:h-16 ml-8 md:ml-8">
+          <div className="relative w-48 h-12 md:w-56 md:h-16 ml-4 md:ml-6 lg:ml-8">
             <Image
               src="/logo-icon4.png"
               alt="Nuekleos logo"
