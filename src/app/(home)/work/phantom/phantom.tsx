@@ -35,7 +35,7 @@ const PhantomContent = () => {
       id: 3,
       heading: "The Result",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "The campaign successfully drove strong awareness for the Tecno Phantom X by associating the device with bold, inspiring personalities and real-life stories that resonated across different audiences. Through the 6-episode mini talk-show series, key features were organically integrated into high-quality, conversational content, positioning the Phantom X as a premium device aligned with ambition and excellence. Overall, the series generated sustained engagement, elevated brand perception, and reinforced Tecno Phantom X as a product for people who dare to stand out.",
       googleDriveUrl:
         "https://drive.google.com/file/d/1NB83M0ab7IdBk8cvL_p9ZFZINKHh8wc_/preview",
       thumbnail: "/work/phantom/result-thumbnail.png",

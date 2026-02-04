@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Twitter, Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -67,7 +67,7 @@ export default function Footer() {
           {/* Social Media Icons */}
           <div className="flex gap-4">
             <Link 
-              href="https://twitter.com/neukleos" 
+              href="https://x.com/Neukleos_" 
               target="_blank"
               className="hover:text-gray-400 transition"
               aria-label="Twitter"
@@ -75,7 +75,7 @@ export default function Footer() {
               <Twitter size={20} />
             </Link>
             <Link 
-              href="https://instagram.com/neukleos" 
+              href="https://www.instagram.com/teamneukleos/" 
               target="_blank"
               className="hover:text-gray-400 transition"
               aria-label="Instagram"
@@ -83,7 +83,7 @@ export default function Footer() {
               <Instagram size={20} />
             </Link>
             <Link 
-              href="https://linkedin.com/company/neukleos" 
+              href="https://www.linkedin.com/company/neukleos/" 
               target="_blank"
               className="hover:text-gray-400 transition"
               aria-label="LinkedIn"
