@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "./hero";
 import BlogPage from "./blog";
-import StaffPicks from "./staffpicks";
+
 import Footer from "@/components/Footer";
 
 export default function Blog() {
@@ -10,7 +10,7 @@ export default function Blog() {
       <Navbar />
       <Hero />
       <BlogPage />
-      <StaffPicks />
+      
       <Footer />
     </main>
   );
