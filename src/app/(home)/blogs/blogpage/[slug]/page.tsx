@@ -86,14 +86,10 @@ export default function BlogDetails({ params }: PageProps) {
           </div>
 
           {/* Content */}
-          <div className="space-y-6 text-gray-700 text-sm leading-relaxed">
-            {content
-              .split("\n\n")
-              .filter(Boolean)
-              .map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-          </div>
+          <div 
+            className="blog-content text-gray-700 text-sm md:text-base leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
       </section>
       <Footer />
