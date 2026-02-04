@@ -47,7 +47,7 @@ export default function Footer() {
         <div className="space-y-6">
           <div>
             <p className="text-sm text-gray-300 leading-relaxed">
-              21, Oduduwa Street Off Sobo Arobiodu,<br />
+               2 Reverend Ogunbiyi Street,<br />
               Ikeja GRA, Lagos Nigeria
             </p>
           </div>
