@@ -16,17 +16,11 @@ export default function Hero() {
 
       {/* Text content */}
       <div className="absolute inset-0 bg-black/50 flex items-end">
-        {/* Mobile & Tablet */}
-        <div className="md:hidden max-w-7xl mx-auto w-full px-6">
-          <h1 className="text-white text-4xl font-bold tracking-wide mb-24 -ml-2">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-12">
+          <h1 className="text-white text-4xl font-bold tracking-wide mb-24">
             Our service
           </h1>
         </div>
-
-        {/* Desktop */}
-        <h1 className="hidden md:block text-white text-4xl font-bold tracking-wide mb-24 ml-10">
-          Our service
-        </h1>
       </div>
     </section>
   );

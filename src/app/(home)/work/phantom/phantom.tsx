@@ -166,56 +166,7 @@ const PhantomContent = () => {
         </div>
       )}
 
-      {/* Contact Section */}
-      <section className="py-16 px-6 md:px-16">
-        <h2 className="text-xl font-bold mb-8 text-center">
-          Let's Work Together
-        </h2>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Logo */}
-            <div className="flex justify-center mb-4 md:mb-20 lg:mb-32 lg:justify-start">
-              <div className="relative w-full max-w-[300px] h-[100px] md:h-[200px]">
-                <Image
-                  src="/contact/logo.svg"
-                  alt="Neukleos Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
-
-            {/* Contact Inputs */}
-            <div className="space-y-4">
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-black transition-colors"
-              />
-              <input
-                type="tel"
-                placeholder="Phone number"
-                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-black transition-colors"
-              />
-              <input
-                type="text"
-                placeholder="First name"
-                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-black transition-colors"
-              />
-              <input
-                type="text"
-                placeholder="Company name"
-                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-black transition-colors"
-              />
-              <div className="flex justify-center lg:justify-start pt-4">
-                <button className="bg-black text-white px-12 py-3 font-medium hover:bg-gray-800 transition-colors">
-                  Submit
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
     </div>
   );
 };

@@ -15,7 +15,7 @@ export default function Hero() {
         className="object-cover object-center"
       />
 
-      {/* Content container — MATCHES NAVBAR */}
+      {/* Text content */}
       <div className="relative z-10 w-full">
         <div className="max-w-7xl mx-auto px-6 md:px-12 pt-32">
           <div className="max-w-[650px]">

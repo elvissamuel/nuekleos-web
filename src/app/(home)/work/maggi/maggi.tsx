@@ -52,21 +52,7 @@ const MaggiContent = () => {
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <section className="w-full bg-black py-12 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <h2 className="text-xl text-[#E9C416]">
-              What Maggi Had to say about us
-            </h2>
-            <p className="text-white text-xs leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus
-              nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna
-              eget nibh in turpis.
-            </p>
-          </div>
-        </div>
-      </section>
+    
 
       {/* Main Sections */}
       <section className="w-full bg-white py-16 px-6 md:px-16">
