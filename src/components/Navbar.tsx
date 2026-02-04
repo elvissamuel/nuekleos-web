@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -11,25 +10,26 @@ export default function Navbar() {
 
   return (
     <header className="w-full absolute top-0 left-0 z-50">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4 relative">
-        {/* Logo */}
-        <Link href="/" className="flex items-center flex-shrink-0">
-          <div className="relative w-48 h-12 md:w-56 md:h-16 ml-4 md:ml-6 lg:ml-8">
-            <Image
-              src="/logo-icon4.png"
-              alt="Nuekleos logo"
-              fill
-              priority
-              className="object-contain scale-150"
-              style={{ objectPosition: "left center" }}
-            />
-          </div>
-        </Link>
+      <nav className="max-w-7xl mx-auto flex items-center justify-between py-4 relative">
+        {/* Logo - aligned with hero text using same padding */}
+        <div className="px-6 md:px-12">
+          <Link href="/" className="flex items-center">
+            <div className="relative w-56 h-14 md:w-72 md:h-20">
+              <Image
+                src="/logo-icon4.png"
+                alt="Nuekleos logo"
+                fill
+                priority
+                className="object-contain object-left"
+              />
+            </div>
+          </Link>
+        </div>
 
         <div className="flex-1" />
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-12 text-white">
+        <div className="hidden md:flex items-center gap-12 text-white pr-6 md:pr-12">
           <Link href="/about" className="hover:opacity-80 transition">
             About us
           </Link>
@@ -50,7 +50,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white focus:outline-none ml-4 z-50"
+          className="md:hidden text-white focus:outline-none mr-6 z-50"
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
