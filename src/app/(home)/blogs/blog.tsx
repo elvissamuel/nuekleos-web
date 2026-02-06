@@ -51,7 +51,7 @@ export default function BlogPage() {
           <h2 className="text-3xl md:text-4xl font-bold">Latest Posts</h2>
         </div>
         <div className="flex items-center justify-center h-64 mt-12">
-          <div className="text-lg text-red-600">Error loading posts. Please try again later.</div>
+          <div className="text-lg text-red-600">Please try again later.</div>
         </div>
       </section>
     );
