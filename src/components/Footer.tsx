@@ -16,7 +16,7 @@ export default function Footer() {
               href="mailto:info@neukleos.com"
               className="text-sm text-gray-300 hover:text-white transition underline"
             >
-              info@neukleos.com
+              we@neukleos.com
             </Link>
           </div>
 
@@ -38,7 +38,7 @@ export default function Footer() {
               href="mailto:info@neukleos.com"
               className="text-sm text-gray-300 hover:text-white transition underline"
             >
-              info@neukleos.com
+              we@neukleos.com
             </Link>
           </div>
         </div>

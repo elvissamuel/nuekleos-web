@@ -31,7 +31,7 @@ export default function BlogPage() {
 
   if (isLoading) {
     return (
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-16">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-40">
         <div className="mb-2">
           <p className="text-sm text-gray-600 mb-1">Browse and read the latest stuff</p>
           <h2 className="text-3xl md:text-4xl font-bold">Latest Posts</h2>
