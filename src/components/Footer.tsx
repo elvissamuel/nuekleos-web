@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <h3 className="text-base font-semibold mb-2">General Enquiries</h3>
             <Link 
-              href="mailto:info@neukleos.com"
+              href="mailto:we@neukleos.com"
               className="text-sm text-gray-300 hover:text-white transition underline"
             >
               we@neukleos.com
@@ -35,7 +35,7 @@ export default function Footer() {
           <div>
             <h3 className="text-base font-semibold mb-2">New Business</h3>
             <Link 
-              href="mailto:info@neukleos.com"
+              href="mailto:we@neukleos.com"
               className="text-sm text-gray-300 hover:text-white transition underline"
             >
               we@neukleos.com
